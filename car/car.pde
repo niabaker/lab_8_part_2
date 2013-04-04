@@ -4,11 +4,12 @@ void setup() {
 }
 
 int x = 200;
-
+int v=2;
 void draw() {
   noStroke();
   
   background(180, 200, 240);
+
 
   // draw the ground
   fill(110, 170, 120);
@@ -17,6 +18,14 @@ void draw() {
   // draw a yellow car
   fill(150, 150, 150);
   ellipse(x + 30, 320, 90, 20);
+  
+  if(x >= 500) {
+    x=1;
+  }
+  
+  if(x <=0) {
+    v=v*-1; 
+  }
 
   fill(250,250,0);
   rect(x, 300, 80, 20);
@@ -29,5 +38,7 @@ void draw() {
   fill(0, 0, 0);
   ellipse(x + 20, 320, 20, 20);
   ellipse(x + 60, 320, 20, 20);
+  
+  x=x+v;
 
 }
